@@ -2,7 +2,7 @@ module.exports = function (config) {
     config.set({
 
         // base path, that will be used to resolve files and exclude
-        basePath: '../',
+        basePath: './',
 
 
         // frameworks to use
@@ -11,18 +11,18 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'test/libs/chai.js',
-            'test/libs/sinon-1.8.2.js',
-            'javascripts/libs/require.js',
-            'javascripts/App/main.js',
-            {pattern: 'javascripts/**/*.js', included: false, served: true, watched: true},
+            'public/test/libs/chai.js',
+            'public/test/libs/sinon-1.8.2.js',
+            'public/javascripts/libs/require.js',
+            'public/javascripts/App/main.js',
+            {pattern: 'public/javascripts/**/*.js', included: false, served: true, watched: true},
 
-            'test/js/App/main-test.js',
-            'test/**/*.js',
-            'test/**/*.coffee'
+            'public/test/js/App/main-test.js',
+            'public/test/**/*.js',
+            'public/test/**/*.coffee'
         ],
         preprocessors: {
-            'test/**/*.coffee': ['coffee']
+            'public/test/**/*.coffee': ['coffee']
         },
         coffeePreprocessor: {
             // options passed to the coffee compiler

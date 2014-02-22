@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -11,11 +11,24 @@ module.exports = function(grunt) {
                 autoWatch: true
             }
         },
+        coffee: {
+            compile: {
+                expand: true,
+                cwd: "public/assets/coffee/",
+                src: ['**/*.coffee'],
+                dest: 'public/javascripts/',
+                ext: '.js'
+            }
+        },
         watch: {
             //run unit tests with karma (server needs to be already running)
             karma: {
-                files: ['public/test/**/*.js'],
-                tasks: ['karma:unit:run'] //NOTE the :run flag
+                files: ['public/test/**/*.js', 'public/test/**/*.coffee'],
+                tasks: ['karma:unit:run']
+            },
+            scripts: {
+                files: 'public/assets/coffee/App/**/*.coffee',
+                tasks: ['coffee']
             }
         }
 
@@ -23,6 +36,7 @@ module.exports = function(grunt) {
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-karma');
 
     // Default task(s).
