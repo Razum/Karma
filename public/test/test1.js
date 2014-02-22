@@ -3,8 +3,8 @@ describe("A test suite", function() {
     });
     afterEach(function() {
     });
-
     it('should fail', function() {
-        expect(true).to.be.true;
+        chai.expect(true).to.be.true;
     });
 });
+

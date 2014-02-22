@@ -1,11 +1,8 @@
-// Karma configuration
-// Generated on Wed Feb 19 2014 11:53:04 GMT+0200 (FLE Standard Time)
-
 module.exports = function (config) {
     config.set({
 
         // base path, that will be used to resolve files and exclude
-        basePath: './',
+        basePath: '../',
 
 
         // frameworks to use
@@ -14,11 +11,17 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'public/test/**/*.js',
-            'public/test/**/*.coffee'
+            'test/libs/chai.js',
+            'test/libs/sinon-1.8.2.js',
+            'javascripts/libs/require.js',
+            'javascripts/App/main.js',
+            {pattern: 'javascripts//**/*.js', included: false, served: true, watched: true},
+            'test/App/main-test.js',
+            'test/**/*.js',
+            'test/**/*.coffee'
         ],
         preprocessors: {
-            'public/test/**/*.coffee': ['coffee']
+            'test/**/*.coffee': ['coffee']
         },
         coffeePreprocessor: {
             // options passed to the coffee compiler
@@ -27,7 +30,7 @@ module.exports = function (config) {
                 sourceMap: false
             },
             // transforming the filenames
-            transformPath: function(path) {
+            transformPath: function (path) {
                 return path.replace(/\.coffee$/, '.js');
             }
         },
@@ -81,6 +84,12 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false
+        singleRun: false,
+        plugins: [
+            'karma-mocha',
+            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher'
+        ]
     });
 };
