@@ -90,7 +90,8 @@ module.exports = function (config) {
             'karma-mocha',
             'karma-phantomjs-launcher',
             'karma-chrome-launcher',
-            'karma-firefox-launcher'
+            'karma-firefox-launcher',
+            'karma-coffee-preprocessor'
         ]
     });
 };
