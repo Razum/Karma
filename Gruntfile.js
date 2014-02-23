@@ -30,7 +30,19 @@ module.exports = function (grunt) {
                 files: 'public/assets/coffee/App/**/*.coffee',
                 tasks: ['coffee']
             }
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: "public/javascripts/",
+                    optimize: "uglify",
+                    name: "App/main",
+                    mainConfigFile: "public/javascripts/App/main.js",
+                    out: "public/javascripts/build.js"
+                }
+            }
         }
+
 
     });
 
@@ -38,6 +50,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
 
     // Default task(s).
     grunt.registerTask('default', []);
