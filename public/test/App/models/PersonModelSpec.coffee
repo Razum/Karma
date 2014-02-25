@@ -13,3 +13,6 @@ describe 'Person Model', ->
 
   it 'Salary should be grater than 2000', ->
     chai.expect(@person.get 'salary').to.be.above 2500
+
+  it "Sex should be string and equal male", ->
+    chai.expect(@person.get 'sex').to.be.a('string').and.to.equal('male')

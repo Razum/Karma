@@ -5,4 +5,4 @@ define ['backbone'], ->
       lastname: 'Ivanov'
       salary: 3000
       age: 25
-
+      sex: 'male'

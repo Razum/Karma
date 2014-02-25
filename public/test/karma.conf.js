@@ -17,7 +17,7 @@ module.exports = function (config) {
             'javascripts/App/main.js',
             {pattern: 'javascripts/**/*.js', included: false, served: true, watched: true},
 
-            'test/js/App/main-test.js',
+            'test/App/js/main-test.coffee',
             'test/**/*.js',
             'test/**/*.coffee'
         ],

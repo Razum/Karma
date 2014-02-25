@@ -15,7 +15,8 @@
         name: 'Alex',
         lastname: 'Ivanov',
         salary: 3000,
-        age: 25
+        age: 25,
+        sex: 'male'
       };
 
       return PersonModel;
