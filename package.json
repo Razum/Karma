@@ -16,7 +16,6 @@
        "grunt-karma": "~0.6.2",
        "grunt-contrib-coffee": "~0.10.1",
        "grunt-contrib-requirejs": "~0.4.1",
-
        "karma": "~0.10",
        "karma-script-launcher": "~0.1",
        "karma-chrome-launcher": "~0.1.2",
