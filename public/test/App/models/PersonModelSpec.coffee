@@ -4,7 +4,7 @@ describe 'Person Model', ->
       @PersonModel = PersonModel
       @person = new @PersonModel
       done()
-
+      
   it 'Name should be Alex', ->
     chai.expect(@person.get 'name').to.equal 'Alex'
 

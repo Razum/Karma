@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 
     });
 
-    // Load the plugin that provides the "uglify" task.
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-karma');
@@ -54,6 +54,6 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', []);
-    grunt.registerTask('test', ['karma:unit', 'watch']);
+    grunt.registerTask('devandtest', ['karma:unit', 'watch']);
 
 };
